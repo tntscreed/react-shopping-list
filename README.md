@@ -4,15 +4,11 @@
 
 The app requires a json-server running on port 8000. The default file used during development is `data/db.json`. To run the database, install json-server from node, then use the following command:
 
-    ```bash
     npx json-server --watch data/db.json --port 8000
-    ```
 
 To run the app, use the following command:
 
-    ```bash
     npm run start
-    ```
 
 The app will open on port 3000.
 
