@@ -17,7 +17,6 @@ The app will open on port 3000.
 The app is structured as follows:
 
 - src: contains the source code of the application
-
   - src/App.js: the main component of the app, containing the MainPage.
   - src/apiconfig.js: contains the configuration for the json-server
   - src/api: contains the code to interact with the json-server
