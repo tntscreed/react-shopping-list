@@ -14,12 +14,9 @@ import ItemForm from "./ItemForm";
 const MainPage = () => {
   document.title = "Shopping List App";
 
-  const testFunction = () => {
-    console.log("Test Function");
-  };
-
   const queryClient = useQueryClient();
 
+  // Used to refresh the data after adding an item
   const { mutateAsync: addItemMutation } = useMutation({
     mutationFn: addItem,
     onSuccess: () => {
@@ -27,6 +24,7 @@ const MainPage = () => {
     },
   });
 
+  // Used to refresh the data after editing an item
   const { mutateAsync: editItemMutation } = useMutation({
     mutationFn: editItem,
     onSuccess: () => {
@@ -34,8 +32,12 @@ const MainPage = () => {
     },
   });
 
+  // This is called by the edit button when clicked
+  // It tells the form which item to edit
   const [toBeEdited, setToBeEdited] = useState(null);
 
+  // The edit dialog is told by the click event which item to edit,
+  // and what its current values are
   const openEditDialog = ([id, name, quantity, active]) => {
     console.log("Opening edit dialog:\n id: " + id + "\n name: " + name);
 
@@ -52,26 +54,19 @@ const MainPage = () => {
     parent.querySelector("#checkboxInput").checked = active;
   };
 
-  const testAdd = async (item) => {
-    // Only for testing
-    await addItemMutation([
-      API_URL,
-      {
-        name: "Test Item",
-        quantity: 1,
-        active: true,
-      },
-    ]);
-  };
-
+  // Used by the Refresh button
   const refreshData = () => {
     queryClient.invalidateQueries("items");
   };
 
+  // The columns of the table that show up on the page
   const columns = ["ID", "Name", "Qty", "Active", "Actions"];
 
+  // The items that are fetched from the server
   const [items, setItems] = useState(null);
 
+  // isLoading and isError are used to show a loading message or an error message
+  // instead of the table
   const { data, isLoading, isError } = useQuery({
     queryKey: ["items"],
     queryFn: () => fetchItems(API_URL),
@@ -89,6 +84,8 @@ const MainPage = () => {
     }
   }, [toBeEdited]);
 
+  // This is called when the edit form is submitted
+  // It is a wrapper around the editItemMutation function
   const callEditItem = ([url, { name, quantity, active }]) => {
     try {
       editItemMutation([url, { name, quantity, active }, toBeEdited]);
@@ -100,6 +97,7 @@ const MainPage = () => {
     document.getElementById("editItemForm").querySelector(".item-form").close();
   };
 
+  // Used to let the form know which ID they have in the DOM.
   let editFormId = "editItemForm";
   let addFormId = "addItemForm";
 

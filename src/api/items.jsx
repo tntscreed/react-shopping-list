@@ -14,6 +14,8 @@ export async function addItem([url, item, _id]) {
     return response.json();
 }
 
+// The arguments can only be passed in as a list for some reason.
+// I don't know why, but this is the only way it works.
 export async function editItem([url, item, id]) {
     const response = await fetch(`${url}/${id}`, {
         method: "PUT",

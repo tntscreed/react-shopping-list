@@ -1,7 +1,14 @@
 import API_URL from "../api_config";
 
+// formDivId: The id of the div that contains the form
+// title: The title of the form (e.g. "Add Item")
+// btnName: The name of the submit button (e.g. "Add")
+// submitFn: The function to call when the form is submitted (when the button is clicked).
 const ItemForm = ({formDivId, title, btnName, submitFn}) =>{
 
+    // This wrapper is used to get the values from the form and pass them to the submit function.
+    // It verifies the data.
+    // It also resets the form after submission.
     const submitWrapper = () => {
 
         let div = document.getElementById(formDivId);

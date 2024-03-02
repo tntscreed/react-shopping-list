@@ -8,9 +8,14 @@ import {
 import API_URL from "../api_config";
 import ItemForm from "./ItemForm";
 
+// editIdFn: The function to call when the edit button is clicked
+// columns: The columns to display in the table
+// items: The items to display in the table
 const ItemGrid = ({ editIdFn, columns, items }) => {
   let queryClient = useQueryClient();
 
+  // Used to refresh data when an item is removed.
+  // Called by deleteItem.
   const { mutateAsync: removeItemMutation } = useMutation({
     mutationFn: removeItem,
     onSuccess: () => {
@@ -18,6 +23,7 @@ const ItemGrid = ({ editIdFn, columns, items }) => {
     },
   });
 
+  // the function that is called when the button is clicked.
   const deleteItem = async (id) => {
     await removeItemMutation([API_URL, id]);
   };
