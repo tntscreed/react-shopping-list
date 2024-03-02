@@ -39,8 +39,6 @@ const MainPage = () => {
   // The edit dialog is told by the click event which item to edit,
   // and what its current values are
   const openEditDialog = ([id, name, quantity, active]) => {
-    console.log("Opening edit dialog:\n id: " + id + "\n name: " + name);
-
     setToBeEdited(id);
     let parent = document
       .getElementById("editItemForm")
@@ -74,12 +72,6 @@ const MainPage = () => {
       setItems(data);
     }
   }, [data]);
-
-  useEffect(() => {
-    if (toBeEdited) {
-      console.log("toBeEdited switched to this: " + toBeEdited);
-    }
-  }, [toBeEdited]);
 
   // This is called when the edit form is submitted
   // It is a wrapper around the editItemMutation function

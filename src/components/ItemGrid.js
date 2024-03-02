@@ -45,7 +45,13 @@ const ItemGrid = ({ editIdFn, columns, items }) => {
             <td>{item.name}</td>
             <td>{item.quantity}</td>
             <td>
-              <input type="checkbox" checked={item.active} />
+              <input
+                type="checkbox"
+                checked={item.active}
+                onChange={() => {
+                  return false; // do nothing on change
+                }}
+              />
             </td>
             <td className="flex space-x-4">
               <button
