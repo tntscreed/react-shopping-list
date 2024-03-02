@@ -23,7 +23,8 @@ const ItemGrid = ({ editIdFn, columns, items }) => {
     },
   });
 
-  // the function that is called when the button is clicked.
+  // The function that is called when the button is clicked.
+  // Needed for await. Can't call the mutation directly in the onClick.
   const deleteItem = async (id) => {
     await removeItemMutation([API_URL, id]);
   };
