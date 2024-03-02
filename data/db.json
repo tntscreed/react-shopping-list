@@ -1,40 +1,46 @@
 {
   "items": [
     {
-      "id": "db69",
-      "name": "Test Item",
+      "id": "f599",
+      "name": "Tejföl",
+      "quantity": 2,
+      "active": true
+    },
+    {
+      "id": "daf3",
+      "name": "Margarin",
+      "quantity": 8,
+      "active": false
+    },
+    {
+      "id": "4a9d",
+      "name": "Kenyér",
       "quantity": 1,
       "active": true
     },
     {
-      "id": "c700",
-      "name": "Test Item",
+      "id": "afe4",
+      "name": "Víz",
+      "quantity": 6,
+      "active": true
+    },
+    {
+      "id": "9b6d",
+      "name": "Kóla",
       "quantity": 1,
       "active": true
     },
     {
-      "id": "b6ad",
-      "name": "Test Item",
-      "quantity": 1,
+      "id": "2bba",
+      "name": "Sajt",
+      "quantity": 3,
       "active": true
     },
     {
-      "id": "adbb",
-      "name": "Test Item",
-      "quantity": 1,
-      "active": true
-    },
-    {
-      "id": "7d45",
-      "name": "Test Item",
-      "quantity": 1,
-      "active": true
-    },
-    {
-      "id": "72a1",
-      "name": "Test Item",
-      "quantity": 1,
-      "active": true
+      "name": "Tej",
+      "quantity": 3,
+      "active": false,
+      "id": "61b5"
     }
   ]
 }
