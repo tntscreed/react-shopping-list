@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { removeItem } from "./api/items";
+import { removeItem } from "../api/items";
 import {
   QueryClient,
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import API_URL from "./api_config";
+import API_URL from "../api_config";
 import ItemForm from "./ItemForm";
 
 const ItemGrid = ({ editIdFn, columns, items }) => {

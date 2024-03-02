@@ -1,4 +1,4 @@
-import API_URL from "./api_config";
+import API_URL from "../api_config";
 
 const ItemForm = ({formDivId, title, btnName, submitFn}) =>{
 

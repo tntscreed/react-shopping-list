@@ -6,9 +6,9 @@ import {
   useMutation,
   QueryClient,
 } from "@tanstack/react-query";
-import { fetchItems } from "./api/items";
-import { addItem, editItem } from "./api/items";
-import API_URL from "./api_config";
+import { fetchItems } from "../api/items";
+import { addItem, editItem } from "../api/items";
+import API_URL from "../api_config";
 import ItemForm from "./ItemForm";
 
 const MainPage = () => {
