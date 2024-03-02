@@ -19,7 +19,7 @@ The app is structured as follows:
 - src: contains the source code of the application
 
   - src/App.js: the main component of the app, containing the MainPage.
-
+  - src/apiconfig.js: contains the configuration for the json-server
   - src/api: contains the code to interact with the json-server
   - src/components: contains the React components
     - src/components/ItemForm: the form to add a new item or edit an existing one
