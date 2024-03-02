@@ -42,13 +42,10 @@ const MainPage = () => {
     console.log("Opening edit dialog:\n id: " + id + "\n name: " + name);
 
     setToBeEdited(id);
-    document
-      .getElementById("editItemForm")
-      .querySelector(".item-form")
-      .showModal();
     let parent = document
       .getElementById("editItemForm")
       .querySelector(".item-form");
+    parent.showModal();
     parent.querySelector("#nameInput").value = name;
     parent.querySelector("#qtyInput").value = quantity;
     parent.querySelector("#checkboxInput").checked = active;
